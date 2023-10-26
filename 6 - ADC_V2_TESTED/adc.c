@@ -45,6 +45,7 @@ void ADC_init(const ADC_config* conf)
 uint16 ADC_readChannel(ch_no channel)
 {
 	/*set our channel number*/
+	ADMUX &= 0xF8;
 	ADMUX|=channel;
 
 	/*start conversation from Analog to digital*/
