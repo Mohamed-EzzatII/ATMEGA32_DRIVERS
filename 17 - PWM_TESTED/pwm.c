@@ -61,11 +61,11 @@ void PWM_setDutyCycle(uint8 pwm_no,uint8 duty)
 {
 	if(pwm_no == 0)
 	{
-		OCR0=(256*duty)/100;
+		OCR0=(uint8)( ((uint32) (256*duty) )/100 );
 	}
 
 	else if(pwm_no == PWM2)
 	{
-		OCR2=(256*duty)/100;
+		OCR2=(uint8)( ((uint32) (256*duty) )/100 );
 	}
 }
