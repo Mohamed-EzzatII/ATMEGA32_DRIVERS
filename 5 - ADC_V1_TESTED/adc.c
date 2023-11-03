@@ -49,6 +49,7 @@ void ADC_init(void)
 uint16 ADC_readChannel(uint8 channel_number)
 {
 	/*insert channel_number to ADMUX*/
+	ADMUX&=0xf8;
 	ADMUX|=channel_number;
 
 	/*start conversation*/
